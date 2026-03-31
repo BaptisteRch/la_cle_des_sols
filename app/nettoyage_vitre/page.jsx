@@ -77,7 +77,7 @@ export default function NettoyageVitrePage() {
                 <a href="#contact" className="btn btn-primary">
                   Demander un devis
                 </a>
-                <Link href="/professionnels" className="btn btn-ghost">
+                <Link href="/#prestations" className="btn btn-ghost">
                   Voir les autres prestations
                 </Link>
               </div>
@@ -96,39 +96,6 @@ export default function NettoyageVitrePage() {
           </div>
         </div>
       </section>
-      <section className="section">
-        <div className="mx-auto max-w-7xl px-6">
-          <TaxCreditCard compact />
-        </div>
-      </section>
-      {/* TYPES DE SITES */}
-      <Split
-        title="Des interventions adaptées à tous types de bâtiments"
-        image={
-          <Image
-            src="/images/cleaning/window-cleaning-2.jpg"
-            alt="Entretien de vitrages pour bâtiment professionnel"
-            width={1200}
-            height={900}
-            className="h-[280px] md:h-[360px] w-full object-cover"
-          />
-        }
-      >
-        <p className="text-muted">
-          Nos équipes interviennent sur différents environnements, avec des
-          méthodes adaptées à la fréquentation, à l’accessibilité et au niveau
-          d’exigence de chaque site.
-        </p>
-
-        <ul className="ml-5 mt-4 list-disc pl-5 text-muted space-y-2">
-          <li>Bureaux</li>
-          <li>Commerces</li>
-          <li>Bâtiments publics</li>
-          <li>Immeubles</li>
-          <li>Industries</li>
-          <li>Habitations</li>
-        </ul>
-      </Split>
 
       {/* TOUTES HAUTEURS */}
       <Split
@@ -250,6 +217,40 @@ export default function NettoyageVitrePage() {
           </div>
         </div>
       </section>
+
+      <section className="section">
+        <div className="mx-auto max-w-7xl px-6">
+          <TaxCreditCard compact />
+        </div>
+      </section>
+      {/* TYPES DE SITES */}
+      <Split
+        title="Des interventions adaptées à tous types de bâtiments"
+        image={
+          <Image
+            src="/images/cleaning/window-cleaning-2.jpg"
+            alt="Entretien de vitrages pour bâtiment professionnel"
+            width={1200}
+            height={900}
+            className="h-[280px] md:h-[360px] w-full object-cover"
+          />
+        }
+      >
+        <p className="text-muted">
+          Nos équipes interviennent sur différents environnements, avec des
+          méthodes adaptées à la fréquentation, à l’accessibilité et au niveau
+          d’exigence de chaque site.
+        </p>
+
+        <ul className="ml-5 mt-4 list-disc pl-5 text-muted space-y-2">
+          <li>Bureaux</li>
+          <li>Commerces</li>
+          <li>Bâtiments publics</li>
+          <li>Immeubles</li>
+          <li>Industries</li>
+          <li>Habitations</li>
+        </ul>
+      </Split>
 
       {/* BLOC FINAL */}
       <Split

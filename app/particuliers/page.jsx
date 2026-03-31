@@ -124,7 +124,7 @@ export default function ParticuliersPage() {
                 <a href="#contact" className="btn btn-primary">
                   Demander un devis
                 </a>
-                <Link href="/professionnels" className="btn btn-ghost">
+                <Link href="/#prestations" className="btn btn-ghost">
                   Voir les autres prestations
                 </Link>
               </div>

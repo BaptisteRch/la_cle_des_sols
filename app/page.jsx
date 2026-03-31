@@ -6,8 +6,8 @@ import ContactSection from "./components/ContactSection";
 import ServiceCardsPro from "./components/ServiceCardsPro";
 import SiteHeader, { BRAND } from "./components/SiteHeader";
 import ReviewsCarousel from "./components/ReviewsCarousel";
-import ProPart from "./components/ProPart.jsx";
 import FieldGallery from "./components/FieldGallery.jsx";
+import Collaborations from "./components/Collaborations";
 
 export default function Home() {
   return (
@@ -18,10 +18,7 @@ export default function Home() {
       <section className="relative overflow-hidden">
         {/* Background */}
         <div className="pointer-events-none absolute inset-0">
-          <div className="absolute inset-0 bg-[#efe4d6]" />
-
-          {/* grille */}
-          <div className="absolute inset-0 opacity-[0.08] [background-image:linear-gradient(to_right,rgba(0,0,0,.35)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,0,0,.35)_1px,transparent_1px)] [background-size:44px_44px]" />
+          <div className="absolute inset-0 bg-[#8399b6]" />
 
           {/* halo doux */}
           <div className="absolute -top-32 -left-32 h-96 w-96 rounded-full blur-3xl opacity-25 bg-black/10" />
@@ -52,7 +49,7 @@ export default function Home() {
 
               {/* Titre */}
               <h1 className="mt-7 font-extrabold tracking-tight leading-[1.05]">
-                <span className="block italic text-yellow-600 text-3xl md:text-5xl">
+                <span className="block italic text-white text-3xl md:text-5xl">
                   Entreprise de propreté a Saint-Étienne
                 </span>
 
@@ -121,12 +118,13 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section id="services">
+      <section id="prestations">
         <ServiceCardsPro />
       </section>
 
       {/* <FieldGallery /> */}
       <FieldGallery />
+      <Collaborations />
       <ReviewsCarousel reviewUrl={BRAND.reviewUrl} />
 
       {/* CONTACT */}

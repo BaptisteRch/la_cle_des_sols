@@ -4,7 +4,7 @@ export default function ServiceCardsPart() {
   const items = [
     {
       title: "Nettoyage de vitre",
-      desc: "petite description",
+      desc: "Nettoyage sur petite et grande hauteur",
       href: "/nettoyage_vitre",
     },
     {
@@ -14,12 +14,12 @@ export default function ServiceCardsPart() {
     },
     {
       title: "Nettoyage de bases de vie de chantier",
-      desc: "petite description",
+      desc: "Vestiaires, réfectoires, sanitaires...",
       href: "/vie_de_chantier",
     },
     {
       title: "Nettoyage de fin de chantier",
-      desc: "petite description",
+      desc: "En cours de chantier, OPR, nettoyage final",
       href: "/fin_de_chantier",
     },
     {
@@ -42,7 +42,7 @@ export default function ServiceCardsPart() {
   ];
 
   return (
-    <section className="section bg-white">
+    <section id="#prestations" className="section bg-white">
       <div className="mx-auto max-w-7xl px-6">
         {/* Header */}
         <div className="text-center">

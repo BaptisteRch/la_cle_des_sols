@@ -23,7 +23,7 @@ export default function FieldGallery() {
         <div className="grid gap-8 md:grid-cols-[1.1fr_0.1fr] items-end">
           <div>
             <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight">
-              La clé des sols
+              La Clé des Sols
             </h2>
 
             <div className="mt-4 h-[3px] w-20 bg-[var(--brand)] rounded-full" />

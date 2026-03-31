@@ -28,25 +28,31 @@ export default function SiteFooter() {
 
             <div className="flex flex-col gap-2 text-sm text-muted">
               <Link
-                href="/professionnels"
+                href="/nettoyage_vitre"
                 className="hover:text-[var(--brand)]"
               >
-                Nettoyage professionnels
+                Nettoyage de vitre
               </Link>
-              <Link href="/particuliers" className="hover:text-[var(--brand)]">
-                Nettoyage particuliers
+              <Link href="/regulier" className="hover:text-[var(--brand)]">
+                Nettoyage régulier
               </Link>
               <Link
-                href="/fin-de-chantier"
+                href="/vie_de_chantier"
+                className="hover:text-[var(--brand)]"
+              >
+                Bases de vie de chantier
+              </Link>
+              <Link
+                href="/fin_de_chantier"
                 className="hover:text-[var(--brand)]"
               >
                 Fin de chantier
               </Link>
-              <Link href="/sols" className="hover:text-[var(--brand)]">
-                Remise en état sols
+              <Link href="/etat_de_sols" className="hover:text-[var(--brand)]">
+                Remise en état de sols
               </Link>
-              <Link href="/vitres" className="hover:text-[var(--brand)]">
-                Nettoyage vitres
+              <Link href="/particuliers" className="hover:text-[var(--brand)]">
+                Particuliers
               </Link>
             </div>
           </div>

@@ -36,8 +36,8 @@ Téléphone : ${form.phone || "-"}
 Email : ${form.email || "-"}
 Ville / secteur : ${form.city || "-"}
 
-Prestation : ${form.service || "-"}
-Fréquence : ${form.frequency || "-"}
+Statut : ${form.service || "-"}
+Prestation : ${form.frequency || "-"}
 
 Message :
 ${form.message || "-"}

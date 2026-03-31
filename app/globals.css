@@ -32,7 +32,7 @@
   --r-3xl: 26px;
 }
 .bg-beige {
-  background: #efe2d3; /* même beige que hero */
+  background: #a1b7d4; /* même beige que hero */
 }
 
 /* =========================
@@ -100,7 +100,7 @@ a {
   /* Header — plus “clean” : sombre mais léger */
   .header {
     @apply sticky top-0 z-50 backdrop-blur;
-    background: linear-gradient(180deg, #e7d8c5 0%, #f1e6d8 100%);
+    background: linear-gradient(180deg, #c5e7e7 0%, #f1e6d8 100%);
     border-bottom: 1px solid rgba(2, 6, 23, 0.08);
     box-shadow: 0 10px 24px rgba(2, 6, 23, 0.05);
     color: var(--text);

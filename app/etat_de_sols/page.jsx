@@ -73,7 +73,7 @@ export default function EtatDeSolsPage() {
                 <a href="#contact" className="btn btn-primary">
                   Demander un devis
                 </a>
-                <Link href="/professionnels" className="btn btn-ghost">
+                <Link href="/#prestations" className="btn btn-ghost">
                   Voir les autres prestations
                 </Link>
               </div>
@@ -93,9 +93,59 @@ export default function EtatDeSolsPage() {
         </div>
       </section>
 
+      {/* RESULTATS */}
       <section className="section">
         <div className="mx-auto max-w-7xl px-6">
-          <TaxCreditCard compact />
+          <div className="grid gap-8">
+            <div>
+              <h2 className="text-2xl md:text-3xl font-extrabold tracking-tight">
+                Des résultats visibles et durables
+              </h2>
+              <p className="mt-4 text-muted">
+                Ces techniques permettent d’obtenir un nettoyage en profondeur
+                et une véritable remise en état des surfaces les plus
+                encrassées.
+              </p>
+            </div>
+
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+              <div className="card p-6">
+                <div className="font-extrabold">Décaper les sols</div>
+                <p className="mt-2 text-muted">
+                  Élimination des couches de salissures accumulées.
+                </p>
+              </div>
+
+              <div className="card p-6">
+                <div className="font-extrabold">
+                  Enlever les graisses incrustées
+                </div>
+                <p className="mt-2 text-muted">
+                  Traitement en profondeur des zones les plus encrassées.
+                </p>
+              </div>
+
+              <div className="card p-6">
+                <div className="font-extrabold">Assainir les surfaces</div>
+                <p className="mt-2 text-muted">
+                  Un nettoyage plus complet pour des sols plus sains.
+                </p>
+              </div>
+
+              <div className="card p-6">
+                <div className="font-extrabold">Redonner de l’éclat</div>
+                <p className="mt-2 text-muted">
+                  Valorisation visuelle des revêtements ternis par le temps.
+                </p>
+              </div>
+            </div>
+
+            <p className="text-muted">
+              Nous pouvons également réaliser la{" "}
+              <strong>remise en état complète d’un bâtiment</strong>, dans le
+              cadre d’une intervention plus globale de nettoyage exceptionnel.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -154,59 +204,9 @@ export default function EtatDeSolsPage() {
         </ul>
       </Split>
 
-      {/* RESULTATS */}
       <section className="section">
         <div className="mx-auto max-w-7xl px-6">
-          <div className="grid gap-8">
-            <div>
-              <h2 className="text-2xl md:text-3xl font-extrabold tracking-tight">
-                Des résultats visibles et durables
-              </h2>
-              <p className="mt-4 text-muted">
-                Ces techniques permettent d’obtenir un nettoyage en profondeur
-                et une véritable remise en état des surfaces les plus
-                encrassées.
-              </p>
-            </div>
-
-            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-              <div className="card p-6">
-                <div className="font-extrabold">Décaper les sols</div>
-                <p className="mt-2 text-muted">
-                  Élimination des couches de salissures accumulées.
-                </p>
-              </div>
-
-              <div className="card p-6">
-                <div className="font-extrabold">
-                  Enlever les graisses incrustées
-                </div>
-                <p className="mt-2 text-muted">
-                  Traitement en profondeur des zones les plus encrassées.
-                </p>
-              </div>
-
-              <div className="card p-6">
-                <div className="font-extrabold">Assainir les surfaces</div>
-                <p className="mt-2 text-muted">
-                  Un nettoyage plus complet pour des sols plus sains.
-                </p>
-              </div>
-
-              <div className="card p-6">
-                <div className="font-extrabold">Redonner de l’éclat</div>
-                <p className="mt-2 text-muted">
-                  Valorisation visuelle des revêtements ternis par le temps.
-                </p>
-              </div>
-            </div>
-
-            <p className="text-muted">
-              Nous pouvons également réaliser la{" "}
-              <strong>remise en état complète d’un bâtiment</strong>, dans le
-              cadre d’une intervention plus globale de nettoyage exceptionnel.
-            </p>
-          </div>
+          <TaxCreditCard compact />
         </div>
       </section>
 

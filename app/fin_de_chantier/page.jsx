@@ -78,7 +78,7 @@ export default function FinDeChantierPage() {
                 <a href="#contact" className="btn btn-primary">
                   Demander un devis
                 </a>
-                <Link href="/professionnels" className="btn btn-ghost">
+                <Link href="/#prestations" className="btn btn-ghost">
                   Voir les autres prestations
                 </Link>
               </div>
@@ -98,9 +98,59 @@ export default function FinDeChantierPage() {
         </div>
       </section>
 
+      {/* EXPERIENCE */}
       <section className="section">
         <div className="mx-auto max-w-7xl px-6">
-          <TaxCreditCard compact />
+          <div className="grid gap-8">
+            <div>
+              <h2 className="text-2xl md:text-3xl font-extrabold tracking-tight">
+                Une expérience concrète sur des chantiers d’envergure
+              </h2>
+              <p className="mt-4 text-muted">
+                Nous avons notamment réalisé en 2025 le{" "}
+                <strong>
+                  nettoyage du chantier de l’hôpital Bellevue à Saint-Étienne
+                </strong>
+                , représentant plus de <strong>10 000 m² de surfaces</strong>.
+              </p>
+
+              <p className="mt-4 text-muted">
+                Cette expérience nous permet aujourd’hui d’intervenir sur des{" "}
+                <strong>chantiers de toutes tailles</strong>, avec la même
+                exigence de qualité, de réactivité et de sérieux.
+              </p>
+            </div>
+
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+              <div className="card p-6">
+                <div className="font-extrabold">Chantiers en cours</div>
+                <p className="mt-2 text-muted">
+                  Interventions adaptées au rythme des travaux.
+                </p>
+              </div>
+
+              <div className="card p-6">
+                <div className="font-extrabold">Avant réception</div>
+                <p className="mt-2 text-muted">
+                  Préparation des lieux pour les phases de contrôle.
+                </p>
+              </div>
+
+              <div className="card p-6">
+                <div className="font-extrabold">Avant livraison</div>
+                <p className="mt-2 text-muted">
+                  Un rendu propre et valorisant pour le bâtiment.
+                </p>
+              </div>
+
+              <div className="card p-6">
+                <div className="font-extrabold">Toutes surfaces</div>
+                <p className="mt-2 text-muted">
+                  Intervention sur petits comme grands chantiers.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -158,59 +208,9 @@ export default function FinDeChantierPage() {
         </ul>
       </Split>
 
-      {/* EXPERIENCE */}
       <section className="section">
         <div className="mx-auto max-w-7xl px-6">
-          <div className="grid gap-8">
-            <div>
-              <h2 className="text-2xl md:text-3xl font-extrabold tracking-tight">
-                Une expérience concrète sur des chantiers d’envergure
-              </h2>
-              <p className="mt-4 text-muted">
-                Nous avons notamment réalisé en 2025 le{" "}
-                <strong>
-                  nettoyage du chantier de l’hôpital Bellevue à Saint-Étienne
-                </strong>
-                , représentant plus de <strong>10 000 m² de surfaces</strong>.
-              </p>
-
-              <p className="mt-4 text-muted">
-                Cette expérience nous permet aujourd’hui d’intervenir sur des{" "}
-                <strong>chantiers de toutes tailles</strong>, avec la même
-                exigence de qualité, de réactivité et de sérieux.
-              </p>
-            </div>
-
-            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-              <div className="card p-6">
-                <div className="font-extrabold">Chantiers en cours</div>
-                <p className="mt-2 text-muted">
-                  Interventions adaptées au rythme des travaux.
-                </p>
-              </div>
-
-              <div className="card p-6">
-                <div className="font-extrabold">Avant réception</div>
-                <p className="mt-2 text-muted">
-                  Préparation des lieux pour les phases de contrôle.
-                </p>
-              </div>
-
-              <div className="card p-6">
-                <div className="font-extrabold">Avant livraison</div>
-                <p className="mt-2 text-muted">
-                  Un rendu propre et valorisant pour le bâtiment.
-                </p>
-              </div>
-
-              <div className="card p-6">
-                <div className="font-extrabold">Toutes surfaces</div>
-                <p className="mt-2 text-muted">
-                  Intervention sur petits comme grands chantiers.
-                </p>
-              </div>
-            </div>
-          </div>
+          <TaxCreditCard compact />
         </div>
       </section>
 

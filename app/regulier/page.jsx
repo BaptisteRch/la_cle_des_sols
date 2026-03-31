@@ -73,7 +73,7 @@ export default function NettoyageRegulierPage() {
                 <a href="#contact" className="btn btn-primary">
                   Demander un devis
                 </a>
-                <Link href="/professionnels" className="btn btn-ghost">
+                <Link href="/#prestations" className="btn btn-ghost">
                   Voir les autres prestations
                 </Link>
               </div>
@@ -93,9 +93,59 @@ export default function NettoyageRegulierPage() {
         </div>
       </section>
 
+      {/* FREQUENCES */}
       <section className="section">
         <div className="mx-auto max-w-7xl px-6">
-          <TaxCreditCard compact />
+          <div className="grid gap-8">
+            <div>
+              <h2 className="text-2xl md:text-3xl font-extrabold tracking-tight">
+                Des prestations adaptées à votre organisation
+              </h2>
+              <p className="mt-4 text-muted">
+                Nous proposons des interventions planifiées selon le rythme de
+                votre activité, pour garantir des locaux propres toute l’année
+                sans perturber votre fonctionnement.
+              </p>
+            </div>
+
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+              <div className="card p-6">
+                <div className="font-extrabold">Quotidiennes</div>
+                <p className="mt-2 text-muted">
+                  Pour les sites nécessitant un entretien constant.
+                </p>
+              </div>
+
+              <div className="card p-6">
+                <div className="font-extrabold">Hebdomadaires</div>
+                <p className="mt-2 text-muted">
+                  Une fréquence idéale pour de nombreux locaux professionnels.
+                </p>
+              </div>
+
+              <div className="card p-6">
+                <div className="font-extrabold">Mensuelles</div>
+                <p className="mt-2 text-muted">
+                  Pour les besoins plus ponctuels ou les surfaces peu exposées.
+                </p>
+              </div>
+
+              <div className="card p-6">
+                <div className="font-extrabold">Trimestrielles</div>
+                <p className="mt-2 text-muted">
+                  En complément d’un entretien courant ou ciblé.
+                </p>
+              </div>
+            </div>
+
+            <p className="text-muted">
+              Chaque prestation est réalisée par des{" "}
+              <strong>agents qualifiés</strong>, équipés de{" "}
+              <strong>matériel professionnel</strong> et formés aux{" "}
+              <strong>techniques de nettoyage</strong> adaptées aux différents
+              environnements.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -164,65 +214,8 @@ export default function NettoyageRegulierPage() {
         </p>
       </Split>
 
-      {/* FREQUENCES */}
-      <section className="section">
-        <div className="mx-auto max-w-7xl px-6">
-          <div className="grid gap-8">
-            <div>
-              <h2 className="text-2xl md:text-3xl font-extrabold tracking-tight">
-                Des prestations adaptées à votre organisation
-              </h2>
-              <p className="mt-4 text-muted">
-                Nous proposons des interventions planifiées selon le rythme de
-                votre activité, pour garantir des locaux propres toute l’année
-                sans perturber votre fonctionnement.
-              </p>
-            </div>
-
-            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-              <div className="card p-6">
-                <div className="font-extrabold">Quotidiennes</div>
-                <p className="mt-2 text-muted">
-                  Pour les sites nécessitant un entretien constant.
-                </p>
-              </div>
-
-              <div className="card p-6">
-                <div className="font-extrabold">Hebdomadaires</div>
-                <p className="mt-2 text-muted">
-                  Une fréquence idéale pour de nombreux locaux professionnels.
-                </p>
-              </div>
-
-              <div className="card p-6">
-                <div className="font-extrabold">Mensuelles</div>
-                <p className="mt-2 text-muted">
-                  Pour les besoins plus ponctuels ou les surfaces peu exposées.
-                </p>
-              </div>
-
-              <div className="card p-6">
-                <div className="font-extrabold">Trimestrielles</div>
-                <p className="mt-2 text-muted">
-                  En complément d’un entretien courant ou ciblé.
-                </p>
-              </div>
-            </div>
-
-            <p className="text-muted">
-              Chaque prestation est réalisée par des{" "}
-              <strong>agents qualifiés</strong>, équipés de{" "}
-              <strong>matériel professionnel</strong> et formés aux{" "}
-              <strong>techniques de nettoyage</strong> adaptées aux différents
-              environnements.
-            </p>
-          </div>
-        </div>
-      </section>
-
       {/* BLOC FINAL */}
       <Split
-        reverse
         title="Des locaux toujours propres et agréables à vivre"
         image={
           <Image

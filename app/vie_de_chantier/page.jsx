@@ -81,7 +81,7 @@ export default function VieDeChantierPage() {
                 <a href="#contact" className="btn btn-primary">
                   Demander un devis
                 </a>
-                <Link href="/professionnels" className="btn btn-ghost">
+                <Link href="/#prestations" className="btn btn-ghost">
                   Voir les autres prestations
                 </Link>
               </div>
@@ -100,85 +100,6 @@ export default function VieDeChantierPage() {
           </div>
         </div>
       </section>
-
-      <section className="section">
-        <div className="mx-auto max-w-7xl px-6">
-          <TaxCreditCard compact />
-        </div>
-      </section>
-
-      {/* ZONES ENTRETENUES */}
-      <Split
-        title="Nous assurons l’entretien des espaces essentiels"
-        image={
-          <Image
-            src="/images/cleaning/site-life-2.jpg"
-            alt="Nettoyage des espaces de vie sur chantier"
-            width={1200}
-            height={900}
-            className="h-[280px] md:h-[360px] w-full object-cover"
-          />
-        }
-      >
-        <p className="text-muted">
-          L’entretien des bases de vie contribue directement au confort des
-          équipes, à la bonne tenue du chantier et au respect des conditions
-          d’hygiène au quotidien.
-        </p>
-
-        <ul className="ml-5 mt-4 list-disc pl-5 text-muted space-y-2">
-          <li>Vestiaires</li>
-          <li>Réfectoires</li>
-          <li>Sanitaires</li>
-          <li>Bungalows de chantier</li>
-          <li>Bureaux de chantier</li>
-        </ul>
-      </Split>
-
-      {/* CONSOMMABLES */}
-      <Split
-        reverse
-        title="Approvisionnement et distribution des consommables sanitaires"
-        image={
-          <Image
-            src="/images/cleaning/site-life-3.jpg"
-            alt="Gestion des consommables sanitaires sur chantier"
-            width={1200}
-            height={900}
-            className="h-[280px] md:h-[360px] w-full object-cover"
-          />
-        }
-      >
-        <p className="text-muted">
-          En complément du nettoyage, nous pouvons également gérer{" "}
-          <strong>
-            l’approvisionnement et la distribution des consommables sanitaires
-          </strong>
-          , afin de garantir des espaces toujours opérationnels pour les
-          équipes.
-        </p>
-
-        <div className="mt-6 grid gap-4 sm:grid-cols-3">
-          <div className="card p-6">
-            <div className="font-extrabold">Papier toilette</div>
-            <p className="mt-2 text-muted">Selon le rythme du chantier.</p>
-          </div>
-
-          <div className="card p-6">
-            <div className="font-extrabold">Essuie-mains</div>
-            <p className="mt-2 text-muted">
-              Mise à disposition régulière pour les espaces sanitaires.
-            </p>
-          </div>
-
-          <div className="card p-6">
-            <div className="font-extrabold">Savon</div>
-            <p className="mt-2 text-muted">
-              Distribution des essentiels pour l’hygiène quotidienne.
-            </p>
-          </div>
-        </div>
-      </Split>
 
       {/* ORGANISATION */}
       <section className="section">
@@ -229,6 +150,79 @@ export default function VieDeChantierPage() {
           </div>
         </div>
       </section>
+
+      {/* CONSOMMABLES */}
+      <Split
+        reverse
+        title="Approvisionnement et distribution des consommables sanitaires"
+        image={
+          <Image
+            src="/images/cleaning/site-life-3.jpg"
+            alt="Gestion des consommables sanitaires sur chantier"
+            width={1200}
+            height={900}
+            className="h-[280px] md:h-[360px] w-full object-cover"
+          />
+        }
+      >
+        <p className="text-muted">
+          En complément du nettoyage, nous pouvons également gérer{" "}
+          <strong>
+            l’approvisionnement et la distribution des consommables sanitaires
+          </strong>
+          , afin de garantir des espaces toujours opérationnels pour les
+          équipes.
+        </p>
+
+        <div className="mt-6 grid gap-4 sm:grid-cols-3">
+          <div className="card p-6">
+            <div className="font-extrabold">Papier toilette</div>
+            <p className="mt-2 text-muted">Selon le rythme du chantier.</p>
+          </div>
+
+          <div className="card p-6">
+            <div className="font-extrabold">Essuie-mains</div>
+            <p className="mt-2 text-muted">
+              Mise à disposition régulière pour les espaces sanitaires.
+            </p>
+          </div>
+
+          <div className="card p-6">
+            <div className="font-extrabold">Savon</div>
+            <p className="mt-2 text-muted">
+              Distribution des essentiels pour l’hygiène quotidienne.
+            </p>
+          </div>
+        </div>
+      </Split>
+
+      {/* ZONES ENTRETENUES */}
+      <Split
+        title="Nous assurons l’entretien des espaces essentiels"
+        image={
+          <Image
+            src="/images/cleaning/site-life-2.jpg"
+            alt="Nettoyage des espaces de vie sur chantier"
+            width={1200}
+            height={900}
+            className="h-[280px] md:h-[360px] w-full object-cover"
+          />
+        }
+      >
+        <p className="text-muted">
+          L’entretien des bases de vie contribue directement au confort des
+          équipes, à la bonne tenue du chantier et au respect des conditions
+          d’hygiène au quotidien.
+        </p>
+
+        <ul className="ml-5 mt-4 list-disc pl-5 text-muted space-y-2">
+          <li>Vestiaires</li>
+          <li>Réfectoires</li>
+          <li>Sanitaires</li>
+          <li>Bungalows de chantier</li>
+          <li>Bureaux de chantier</li>
+        </ul>
+      </Split>
 
       {/* BLOC FINAL */}
       <Split
