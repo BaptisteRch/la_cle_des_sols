@@ -1,6 +1,206 @@
 @import "tailwindcss";
 
 /* =========================
+   ACCESSIBILITÉ
+   ========================= */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 8px;
+  background: #0b4f67;
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 10px;
+  font-weight: 600;
+  z-index: 100;
+  transition: top 0.2s ease;
+}
+.skip-link:focus {
+  top: 8px;
+  outline: 3px solid #f4c84a;
+  outline-offset: 2px;
+}
+
+/* Respect motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* =========================
+   SCROLL REVEAL
+   ========================= */
+.reveal {
+  opacity: 0;
+  transition:
+    opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+.reveal-up {
+  transform: translateY(28px);
+}
+.reveal-down {
+  transform: translateY(-28px);
+}
+.reveal-left {
+  transform: translateX(-28px);
+}
+.reveal-right {
+  transform: translateX(28px);
+}
+.reveal-fade {
+  transform: none;
+}
+.reveal-visible {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+/* =========================
+   HERO ANIMATED BACKGROUND
+   ========================= */
+@keyframes blob-float {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(30px, -20px) scale(1.05);
+  }
+  66% {
+    transform: translate(-20px, 15px) scale(0.95);
+  }
+}
+.hero-blob {
+  animation: blob-float 14s ease-in-out infinite;
+}
+.hero-blob-delay {
+  animation: blob-float 18s ease-in-out infinite reverse;
+  animation-delay: -4s;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Animated gradient for badges */
+.badge-gradient {
+  background: linear-gradient(
+    90deg,
+    rgba(20, 166, 200, 0.15),
+    rgba(244, 200, 74, 0.2),
+    rgba(20, 166, 200, 0.15)
+  );
+  background-size: 200% 100%;
+  animation: shimmer 6s linear infinite;
+}
+
+/* Pulsing dot for live indicator */
+@keyframes pulse-dot {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(34, 197, 94, 0);
+  }
+}
+.dot-live {
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+
+/* Service card fancy hover */
+.card-fancy {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+.card-fancy::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    400px circle at var(--mx, 50%) var(--my, 50%),
+    rgba(20, 166, 200, 0.18),
+    transparent 40%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  z-index: -1;
+}
+.card-fancy:hover::before {
+  opacity: 1;
+}
+.card-fancy::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(
+    135deg,
+    transparent,
+    rgba(20, 166, 200, 0.5),
+    transparent
+  );
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+.card-fancy:hover::after {
+  opacity: 1;
+}
+
+/* Counter numbers */
+.stat-number {
+  font-variant-numeric: tabular-nums;
+  background: linear-gradient(135deg, var(--brand), var(--brand2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Floating gradient buttons */
+.btn-primary {
+  position: relative;
+  overflow: hidden;
+}
+.btn-primary::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.35) 50%,
+    transparent 70%
+  );
+  transform: translateX(-120%);
+  transition: transform 0.7s ease;
+}
+.btn-primary:hover::before {
+  transform: translateX(120%);
+}
+
+/* =========================
    TOKENS — LA CLÉ DES SOLS
    Clair / clean / bleu-cyan
    ========================= */

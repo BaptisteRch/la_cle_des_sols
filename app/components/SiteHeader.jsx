@@ -12,22 +12,25 @@ const BRAND = {
   baseCity: "Saint-Étienne",
   region: "Auvergne-Rhône-Alpes",
   leadTime: "RDV sous 48h",
+  reviewUrl:
+    "https://www.google.com/search?q=la+cl%C3%A9+des+sols+saint-etienne",
 };
 
 export default function SiteHeader() {
   return (
-    <header className="header">
+    <header className="header" role="banner">
       <Container className="flex items-center justify-between py-4">
         {/* Left: logo + brand */}
         <div className="flex items-center gap-6">
           <Link
             href="/"
+            aria-label="La clé des sols — accueil"
             className="flex items-center gap-3 hover:opacity-90 transition leading-none"
           >
             <div className="relative h-11 w-30 md:h-14 md:w-30 flex-shrink-0">
               <Image
                 src="/images/logo.webp"
-                alt="La clé des sols"
+                alt="Logo La clé des sols"
                 fill
                 className="object-contain"
                 priority
@@ -35,9 +38,6 @@ export default function SiteHeader() {
             </div>
 
             <div className="leading-tight">
-              {/* <div className="font-extrabold tracking-tight text-lg md:text-xl">
-                {BRAND.name}
-              </div> */}
               <div className="brand-subtitle">
                 Société de nettoyage • {BRAND.baseCity}
               </div>
@@ -46,8 +46,15 @@ export default function SiteHeader() {
         </div>
 
         {/* Right: nav + CTAs */}
-        <div className="flex items-center gap-3">
-          <a href={BRAND.phoneHref} className="btn btn-primary">
+        <nav
+          aria-label="Navigation principale"
+          className="flex items-center gap-3"
+        >
+          <a
+            href={BRAND.phoneHref}
+            className="btn btn-primary"
+            aria-label={`Appeler La clé des sols au ${BRAND.phoneDisplay}`}
+          >
             Appeler{" "}
             <span className="hidden sm:inline">{BRAND.phoneDisplay}</span>
           </a>
@@ -55,7 +62,7 @@ export default function SiteHeader() {
           <a href="#contact" className="btn btn-outline hidden sm:inline-flex">
             Devis gratuit
           </a>
-        </div>
+        </nav>
       </Container>
     </header>
   );

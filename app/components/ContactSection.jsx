@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import { BRAND } from "./SiteHeader";
 
 const SERVICE_OPTIONS = ["Je suis un professionnel", "Je suis un particulier"];
@@ -14,48 +14,67 @@ const FREQUENCY_OPTIONS = [
   "Autre",
 ];
 
+const INITIAL_FORM = {
+  name: "",
+  phone: "",
+  email: "",
+  city: "",
+  service: SERVICE_OPTIONS[0],
+  frequency: FREQUENCY_OPTIONS[0],
+  message: "",
+  website: "",
+};
+
 export default function ContactSection() {
-  const [form, setForm] = useState({
-    name: "",
-    phone: "",
-    email: "",
-    city: "",
-    service: SERVICE_OPTIONS[0],
-    frequency: FREQUENCY_OPTIONS[0],
-    message: "",
-  });
-
-  const mailtoHref = useMemo(() => {
-    const subject = encodeURIComponent(
-      `Demande de devis — ${BRAND.name} (${BRAND.baseCity})`,
-    );
-
-    const body = encodeURIComponent(
-      `Nom : ${form.name || "-"}
-Téléphone : ${form.phone || "-"}
-Email : ${form.email || "-"}
-Ville / secteur : ${form.city || "-"}
-
-Statut : ${form.service || "-"}
-Prestation : ${form.frequency || "-"}
-
-Message :
-${form.message || "-"}
-
-Envoyé depuis le site ${BRAND.name}`,
-    );
-
-    return `mailto:${BRAND.email}?subject=${subject}&body=${body}`;
-  }, [form]);
+  const [form, setForm] = useState(INITIAL_FORM);
+  const [status, setStatus] = useState("idle");
+  const [errorMsg, setErrorMsg] = useState("");
 
   function onChange(e) {
     const { name, value } = e.target;
     setForm((s) => ({ ...s, [name]: value }));
   }
 
-  function onSubmit(e) {
+  async function onSubmit(e) {
     e.preventDefault();
-    window.location.href = mailtoHref;
+    if (status === "loading") return;
+
+    if (!form.name.trim() || (!form.phone.trim() && !form.email.trim())) {
+      setStatus("error");
+      setErrorMsg("Merci d'indiquer votre nom et un moyen de vous recontacter (téléphone ou email).");
+      return;
+    }
+
+    setStatus("loading");
+    setErrorMsg("");
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+
+      const data = await res.json().catch(() => ({}));
+
+      if (!res.ok || !data.ok) {
+        setStatus("error");
+        setErrorMsg(
+          "L'envoi a échoué. Vous pouvez nous appeler directement au " +
+            BRAND.phoneDisplay + "."
+        );
+        return;
+      }
+
+      setStatus("success");
+      setForm(INITIAL_FORM);
+    } catch {
+      setStatus("error");
+      setErrorMsg(
+        "Problème de connexion. Vous pouvez nous appeler au " +
+          BRAND.phoneDisplay + "."
+      );
+    }
   }
 
   return (
@@ -69,7 +88,7 @@ Envoyé depuis le site ${BRAND.name}`,
             </div>
 
             <h2 className="mt-5 text-3xl md:text-4xl font-extrabold tracking-tight">
-              Besoin d’un devis de nettoyage ?
+              Besoin d’un devis de nettoyage&nbsp;?
             </h2>
 
             <p className="mt-4 text-muted max-w-xl">
@@ -114,90 +133,181 @@ Envoyé depuis le site ${BRAND.name}`,
           </div>
 
           {/* Form */}
-          <form onSubmit={onSubmit} className="grid gap-4">
-            <div className="grid gap-4 sm:grid-cols-2">
+          {status === "success" ? (
+            <div
+              role="status"
+              aria-live="polite"
+              className="card p-8 flex flex-col items-center text-center gap-3 min-h-[360px] justify-center"
+            >
+              <div className="text-5xl" aria-hidden="true">✅</div>
+              <h3 className="text-2xl font-extrabold tracking-tight">
+                Demande envoyée&nbsp;!
+              </h3>
+              <p className="text-muted max-w-sm">
+                Merci, nous vous recontactons sous 48h ouvrées. En cas d'urgence,
+                appelez-nous au{" "}
+                <a href={BRAND.phoneHref} className="font-semibold text-[var(--brand)]">
+                  {BRAND.phoneDisplay}
+                </a>
+                .
+              </p>
+              <button
+                type="button"
+                onClick={() => setStatus("idle")}
+                className="btn btn-outline mt-2"
+              >
+                Envoyer une nouvelle demande
+              </button>
+            </div>
+          ) : (
+            <form onSubmit={onSubmit} className="grid gap-4" noValidate>
+              {/* honeypot */}
               <input
-                className="input input-bordered"
-                name="name"
-                placeholder="Nom"
-                value={form.name}
+                type="text"
+                name="website"
+                value={form.website}
                 onChange={onChange}
+                tabIndex={-1}
+                autoComplete="off"
+                aria-hidden="true"
+                style={{
+                  position: "absolute",
+                  left: "-9999px",
+                  width: 1,
+                  height: 1,
+                  opacity: 0,
+                }}
               />
 
-              <input
-                type="tel"
-                autoComplete="tel"
-                className="input input-bordered"
-                name="phone"
-                placeholder="Téléphone"
-                value={form.phone}
-                onChange={onChange}
-              />
-            </div>
+              <div className="grid gap-4 sm:grid-cols-2">
+                <label className="grid gap-1">
+                  <span className="sr-only">Nom</span>
+                  <input
+                    className="input input-bordered"
+                    name="name"
+                    placeholder="Nom *"
+                    required
+                    value={form.name}
+                    onChange={onChange}
+                  />
+                </label>
 
-            <input
-              type="email"
-              autoComplete="email"
-              className="input input-bordered"
-              name="email"
-              placeholder="Email (optionnel)"
-              value={form.email}
-              onChange={onChange}
-            />
+                <label className="grid gap-1">
+                  <span className="sr-only">Téléphone</span>
+                  <input
+                    type="tel"
+                    autoComplete="tel"
+                    className="input input-bordered"
+                    name="phone"
+                    placeholder="Téléphone *"
+                    value={form.phone}
+                    onChange={onChange}
+                  />
+                </label>
+              </div>
 
-            <input
-              className="input input-bordered"
-              name="city"
-              placeholder="Ville / secteur"
-              value={form.city}
-              onChange={onChange}
-            />
+              <label className="grid gap-1">
+                <span className="sr-only">Email</span>
+                <input
+                  type="email"
+                  autoComplete="email"
+                  className="input input-bordered"
+                  name="email"
+                  placeholder="Email (optionnel)"
+                  value={form.email}
+                  onChange={onChange}
+                />
+              </label>
 
-            <div className="grid gap-4 sm:grid-cols-2">
-              <select
-                className="select input-bordered"
-                name="service"
-                value={form.service}
-                onChange={onChange}
+              <label className="grid gap-1">
+                <span className="sr-only">Ville</span>
+                <input
+                  className="input input-bordered"
+                  name="city"
+                  placeholder="Ville / secteur"
+                  value={form.city}
+                  onChange={onChange}
+                />
+              </label>
+
+              <div className="grid gap-4 sm:grid-cols-2">
+                <label className="grid gap-1">
+                  <span className="sr-only">Statut</span>
+                  <select
+                    className="select input-bordered"
+                    name="service"
+                    value={form.service}
+                    onChange={onChange}
+                  >
+                    {SERVICE_OPTIONS.map((opt) => (
+                      <option key={opt} value={opt}>
+                        {opt}
+                      </option>
+                    ))}
+                  </select>
+                </label>
+
+                <label className="grid gap-1">
+                  <span className="sr-only">Prestation</span>
+                  <select
+                    className="select input-bordered"
+                    name="frequency"
+                    value={form.frequency}
+                    onChange={onChange}
+                  >
+                    {FREQUENCY_OPTIONS.map((opt) => (
+                      <option key={opt} value={opt}>
+                        {opt}
+                      </option>
+                    ))}
+                  </select>
+                </label>
+              </div>
+
+              <label className="grid gap-1">
+                <span className="sr-only">Message</span>
+                <textarea
+                  className="textarea input-bordered"
+                  name="message"
+                  rows={5}
+                  placeholder="Décrivez votre besoin (surface, type de locaux, délais, accès, contraintes...)"
+                  value={form.message}
+                  onChange={onChange}
+                />
+              </label>
+
+              {status === "error" && errorMsg && (
+                <p
+                  role="alert"
+                  className="text-sm font-medium rounded-xl bg-red-50 border border-red-200 text-red-700 px-4 py-3"
+                >
+                  {errorMsg}
+                </p>
+              )}
+
+              <button
+                type="submit"
+                disabled={status === "loading"}
+                className="btn btn-primary w-full disabled:opacity-70 disabled:cursor-not-allowed"
               >
-                {SERVICE_OPTIONS.map((opt) => (
-                  <option key={opt} value={opt}>
-                    {opt}
-                  </option>
-                ))}
-              </select>
+                {status === "loading" ? (
+                  <span className="inline-flex items-center gap-2">
+                    <span
+                      className="h-4 w-4 rounded-full border-2 border-white/40 border-t-white animate-spin"
+                      aria-hidden="true"
+                    />
+                    Envoi en cours…
+                  </span>
+                ) : (
+                  "Envoyer la demande (devis gratuit)"
+                )}
+              </button>
 
-              <select
-                className="select input-bordered"
-                name="frequency"
-                value={form.frequency}
-                onChange={onChange}
-              >
-                {FREQUENCY_OPTIONS.map((opt) => (
-                  <option key={opt} value={opt}>
-                    {opt}
-                  </option>
-                ))}
-              </select>
-            </div>
-
-            <textarea
-              className="textarea input-bordered"
-              name="message"
-              rows={5}
-              placeholder="Décrivez votre besoin (surface, type de locaux, délais, accès, contraintes...)"
-              value={form.message}
-              onChange={onChange}
-            />
-
-            <button type="submit" className="btn btn-primary w-full">
-              Envoyer la demande (devis gratuit)
-            </button>
-
-            <p className="text-xs text-muted">
-              En cliquant, votre client email s’ouvre avec le message prérempli.
-            </p>
-          </form>
+              <p className="text-xs text-muted">
+                * champs requis. En soumettant, vous acceptez d'être recontacté(e) au sujet de votre demande.
+              </p>
+            </form>
+          )}
         </div>
       </div>
     </div>

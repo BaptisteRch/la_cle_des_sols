@@ -1,33 +1,33 @@
 import { MetadataRoute } from "next";
 
-const SITE_URL = "https://flashnuisible.fr";
+const SITE_URL = "https://laclesessols.fr";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
 
-  // Mets ici les routes importantes (ajoute/retire selon ton site)
   const routes = [
     "",
+    "/#prestations",
     "/#contact",
-    "/fouines",
-    "/deratisation",
-    "/desinsectisation",
-    "/guepes-frelons",
-    "/presentation",
-    "/problemes/punaises-de-lit",
-    "/problemes/cafards-blattes",
-    "/problemes/deratisation",
-    "/problemes/guepes-frelons",
-    "/professionnels",
-    "/urgences/punaises-de-lit",
-    "/urgences/cafards-blattes",
-    "/urgences/deratisation",
-    "/urgences/guepes-frelons",
-    "/xylophages",
+    "/particuliers",
+    "/nettoyage_vitre",
+    "/regulier",
+    "/vie_de_chantier",
+    "/fin_de_chantier",
+    "/etat_de_sols",
+    "/faq",
+    "/mentions-legales",
+    "/politique-confidentialite",
   ];
 
-  return routes.map((path) => ({
-    url: `${SITE_URL}${path}`,
-    lastModified: now,
-  }));
+  return routes.map((path) => {
+    const isLegal =
+      path === "/mentions-legales" || path === "/politique-confidentialite";
+    return {
+      url: `${SITE_URL}${path}`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: path === "" ? 1 : isLegal ? 0.2 : 0.7,
+    };
+  });
 }

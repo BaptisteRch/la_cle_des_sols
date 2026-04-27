@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://flashnuisible.fr/sitemap.xml",
+    sitemap: "https://laclesessols.fr/sitemap.xml",
   };
 }

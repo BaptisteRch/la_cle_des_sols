@@ -54,6 +54,9 @@ export default function SiteFooter() {
               <Link href="/particuliers" className="hover:text-[var(--brand)]">
                 Particuliers
               </Link>
+              <Link href="/faq" className="hover:text-[var(--brand)]">
+                Questions fréquentes
+              </Link>
             </div>
           </div>
 

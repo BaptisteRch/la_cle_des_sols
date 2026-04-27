@@ -1,9 +1,9 @@
 // app/lib/seo.js
 export function buildLocalMetadata({ serviceLabel, cityName, area, slugPath }) {
-  const title = `${serviceLabel} à ${cityName} — Flash Nuisible`;
+  const title = `${serviceLabel} à ${cityName} — La clé des sols`;
   const description =
     `${serviceLabel} à ${cityName} : intervention rapide, devis gratuit, approche professionnelle. ` +
-    `Zone : ${area}. Contactez Flash Nuisible.`;
+    `Zone : ${area}. Contactez La clé des sols.`;
 
   return {
     title,
