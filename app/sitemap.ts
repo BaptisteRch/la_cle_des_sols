@@ -1,14 +1,12 @@
 import { MetadataRoute } from "next";
 
-const SITE_URL = "https://laclesessols.fr";
+const SITE_URL = "https://cledessols.fr";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
 
   const routes = [
     "",
-    "/#prestations",
-    "/#contact",
     "/particuliers",
     "/nettoyage_vitre",
     "/regulier",

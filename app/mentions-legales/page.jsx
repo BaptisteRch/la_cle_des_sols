@@ -43,19 +43,18 @@ export default function MentionsLegalesPage() {
               <p className="mt-3 text-muted">
                 <strong>Raison sociale :</strong> La clé des sols
                 <br />
-                <strong>Forme juridique :</strong> [À compléter — SARL / EURL /
-                SAS]
+                <strong>Forme juridique :</strong> SAS
                 <br />
-                <strong>Capital social :</strong> [À compléter] €
+                <strong>Capital social :</strong> 15 000 €
                 <br />
-                <strong>Siège social :</strong> [Adresse à compléter] —{" "}
-                {BRAND.baseCity}
+                <strong>Siège social :</strong> 7 rue Calixte Plotton, 42000
+                Saint-Étienne
                 <br />
-                <strong>SIRET :</strong> [À compléter]
+                <strong>SIRET :</strong> 492 559 182 00018
                 <br />
-                <strong>RCS :</strong> [À compléter] Saint-Étienne
+                <strong>RCS :</strong> 492 559 182 R.C.S. Saint-Étienne
                 <br />
-                <strong>N° TVA intracommunautaire :</strong> [À compléter]
+                <strong>N° TVA intracommunautaire :</strong> FR25 492 559 182
                 <br />
                 <strong>Directeur de la publication :</strong> G. Magand
               </p>

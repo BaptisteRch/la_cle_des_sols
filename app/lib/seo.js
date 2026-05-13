@@ -14,7 +14,7 @@ export function buildLocalMetadata({ serviceLabel, cityName, area, slugPath }) {
       title,
       description,
       url: `/${slugPath}`,
-      images: ["/images/og.jpg"],
+      images: ["/images/logo.webp"],
       locale: "fr_FR",
       type: "website",
     },

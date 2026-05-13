@@ -2,23 +2,19 @@ import Image from "next/image";
 import Reveal from "./Reveal";
 
 export default function Collaborations() {
-  const photos = [
-    { src: "/images/mondialbox2.jpg", alt: "MondialBox — client La clé des sols" },
-    { src: "/images/laposte.jpg", alt: "La Poste — client La clé des sols" },
-    { src: "/images/sncf2.jpg", alt: "SNCF — client La clé des sols" },
-    { src: "/images/suez2.jpg", alt: "SUEZ — client La clé des sols" },
-    { src: "/images/nestenn.jpg", alt: "Nestenn Immobilier — client La clé des sols" },
-    { src: "/images/orpi.jpg", alt: "Orpi — client La clé des sols" },
-    { src: "/images/inter-nett.jpg", alt: "Inter-nett — partenaire La clé des sols" },
-    { src: "/images/condamin.svg", alt: "Condamin — client La clé des sols" },
-    { src: "/images/kia.jpg", alt: "Kia — client La clé des sols" },
-    { src: "/images/victor.jpg", alt: "Victor Gestion — client La clé des sols" },
-    { src: "/images/alain.jpg", alt: "Alain Tronchet Immobilier — client La clé des sols" },
-    { src: "/images/compagnie.svg", alt: "La Compagnie des Déboucheurs — partenaire La clé des sols" },
-    { src: "/images/rivoire-paysage.jpg", alt: "Rivoire Paysage — client La clé des sols" },
-    { src: "/images/planb.jpg", alt: "Plan B Nettoyage — partenaire La clé des sols" },
-    { src: "/images/cle-des-sols2.jpg", alt: "La clé des sols — logo" },
-    { src: "/images/chazelle.jpg", alt: "Chazelle Construction — client La clé des sols" },
+  const clients = [
+    { name: "Chazelle", logo: "/images/clients/chazelle.webp" },
+    { name: "SOROC", logo: "/images/clients/soroc.webp" },
+    { name: "Obut", logo: "/images/clients/obut.webp" },
+    { name: "CHU Saint-Étienne", logo: "/images/clients/CHU.webp" },
+    { name: "Kadro Bois", logo: "/images/clients/kadro-bois.webp" },
+    { name: "Christophe Roux Menuiserie", logo: "/images/clients/christophe-roux.webp" },
+    { name: "2B Économiste", logo: "/images/clients/2b-economiste.webp" },
+    { name: "Focal", logo: "/images/clients/focal.webp" },
+    { name: "KTM Saint-Étienne", logo: "/images/clients/ktm.webp" },
+    { name: "La Muscadine", logo: "/images/clients/la-muscadine.webp" },
+    { name: "Le Chardon Bleu", logo: "/images/clients/le-chardon-bleu.webp" },
+    { name: "Pyramid Travaux Spéciaux", logo: "/images/clients/pyramid.webp" },
   ];
 
   return (
@@ -39,8 +35,8 @@ export default function Collaborations() {
         </Reveal>
 
         <ul className="mt-8 grid gap-4 grid-cols-2 sm:grid-cols-3 md:grid-cols-4">
-          {photos.map((p, idx) => (
-            <Reveal as="li" key={p.src} direction="up" delay={idx * 40}>
+          {clients.map((c, idx) => (
+            <Reveal as="li" key={c.name} direction="up" delay={idx * 40}>
               <div
                 className="
                   card h-28 sm:h-32
@@ -54,18 +50,17 @@ export default function Collaborations() {
               >
                 <div className="relative w-full h-full">
                   <Image
-                    src={p.src}
-                    alt={p.alt}
+                    src={c.logo}
+                    alt={`${c.name} — client La clé des sols`}
                     fill
                     sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, 25vw"
                     className="
                       object-contain
-                      grayscale
-                      opacity-70
+                      [filter:grayscale(30%)]
+                      opacity-90
                       transition
-                      hover:grayscale-0
+                      hover:[filter:grayscale(0%)]
                       hover:opacity-100
-                      max-h-20 sm:max-h-24
                     "
                   />
                 </div>

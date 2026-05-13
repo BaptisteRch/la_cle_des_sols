@@ -85,10 +85,11 @@ export default function NettoyageVitrePage() {
 
             <div className="card overflow-hidden">
               <Image
-                src="/images/cleaning/window-cleaning-1.jpg"
-                alt="Nettoyage de vitres professionnel"
+                src="/images/cleaning/window-cleaning-1.webp"
+                alt="Agent La clé des sols nettoyant une vitrine professionnelle à Saint-Étienne"
                 width={1200}
-                height={900}
+                height={1600}
+                sizes="(max-width: 768px) 100vw, 45vw"
                 className="h-[280px] md:h-[320px] w-full object-cover"
                 priority
               />
@@ -103,10 +104,11 @@ export default function NettoyageVitrePage() {
         title="Nettoyage de vitres toutes hauteurs"
         image={
           <Image
-            src="/images/cleaning/window-cleaning-3.jpg"
-            alt="Nettoyage de vitres en hauteur"
+            src="/images/cleaning/window-cleaning-3.webp"
+            alt="Nettoyage de vitres en hauteur à la perche eau pure HiFlo — La clé des sols"
             width={1200}
-            height={900}
+            height={1600}
+            sizes="(max-width: 768px) 100vw, 45vw"
             className="h-[280px] md:h-[360px] w-full object-cover"
           />
         }
@@ -228,10 +230,11 @@ export default function NettoyageVitrePage() {
         title="Des interventions adaptées à tous types de bâtiments"
         image={
           <Image
-            src="/images/cleaning/window-cleaning-2.jpg"
-            alt="Entretien de vitrages pour bâtiment professionnel"
+            src="/images/cleaning/window-cleaning-2.webp"
+            alt="Intervention de nettoyage de vitres sur bâtiment professionnel"
             width={1200}
-            height={900}
+            height={1600}
+            sizes="(max-width: 768px) 100vw, 45vw"
             className="h-[280px] md:h-[360px] w-full object-cover"
           />
         }
@@ -253,39 +256,33 @@ export default function NettoyageVitrePage() {
       </Split>
 
       {/* BLOC FINAL */}
-      <Split
-        reverse
-        title="Un service fiable pour vos locaux professionnels"
-        image={
-          <Image
-            src="/images/cleaning/window-cleaning-4.jpg"
-            alt="Entreprise de nettoyage de vitres à Saint-Étienne"
-            width={1200}
-            height={900}
-            className="h-[280px] md:h-[360px] w-full object-cover"
-          />
-        }
-      >
-        <p className="text-muted">
-          La Clé des Sols accompagne les entreprises, commerces, copropriétés et
-          établissements publics avec des prestations régulières ou ponctuelles,
-          en fonction de vos besoins.
-        </p>
+      <section className="section">
+        <div className="mx-auto max-w-3xl px-6 text-center">
+          <h2 className="text-2xl md:text-3xl font-extrabold tracking-tight">
+            Un service fiable pour vos locaux professionnels
+          </h2>
 
-        <p className="mt-3 text-muted">
-          Chaque intervention est organisée pour offrir un résultat
-          irréprochable, dans le respect de vos contraintes d’accès, d’horaires
-          et de sécurité.
-        </p>
+          <p className="mt-4 text-muted">
+            La Clé des Sols accompagne les entreprises, commerces, copropriétés et
+            établissements publics avec des prestations régulières ou ponctuelles,
+            en fonction de vos besoins.
+          </p>
 
-        <p className="mt-3 text-muted">
-          Pour une demande plus globale d’entretien de locaux professionnels,{" "}
-          <Link href="/professionnels" className="underline font-bold">
-            découvrez aussi notre page dédiée aux professionnels
-          </Link>
-          .
-        </p>
-      </Split>
+          <p className="mt-3 text-muted">
+            Chaque intervention est organisée pour offrir un résultat
+            irréprochable, dans le respect de vos contraintes d’accès, d’horaires
+            et de sécurité.
+          </p>
+
+          <p className="mt-3 text-muted">
+            Pour une demande plus globale d’entretien de locaux professionnels,{" "}
+            <Link href="/regulier" className="underline font-bold">
+              découvrez aussi notre prestation de nettoyage régulier
+            </Link>
+            .
+          </p>
+        </div>
+      </section>
 
       {/* CONTACT */}
       <section className="section bg-beige" id="contact">

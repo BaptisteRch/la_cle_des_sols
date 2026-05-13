@@ -87,7 +87,10 @@ export default function ContactSection() {
               Devis gratuit • {BRAND.leadTime}
             </div>
 
-            <h2 className="mt-5 text-3xl md:text-4xl font-extrabold tracking-tight">
+            <h2
+              id="contact-title"
+              className="mt-5 text-3xl md:text-4xl font-extrabold tracking-tight"
+            >
               Besoin d’un devis de nettoyage&nbsp;?
             </h2>
 
