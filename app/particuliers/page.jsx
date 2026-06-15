@@ -11,8 +11,8 @@ function Split({ reverse = false, title, children, image }) {
     <section className="section">
       <div className="mx-auto max-w-7xl px-6">
         <div
-          className={`grid gap-8 items-start md:grid-cols-2 ${
-            reverse ? "md:[&>*:first-child]:order-2" : ""
+          className={`grid gap-8 items-start ${image ? "md:grid-cols-2" : ""} ${
+            image && reverse ? "md:[&>*:first-child]:order-2" : ""
           }`}
         >
           <div>
@@ -24,9 +24,11 @@ function Split({ reverse = false, title, children, image }) {
             <div className={title ? "mt-4" : ""}>{children}</div>
           </div>
 
-          <div className="grid gap-4">
-            <div className="card overflow-hidden">{image}</div>
-          </div>
+          {image ? (
+            <div className="grid gap-4">
+              <div className="card overflow-hidden">{image}</div>
+            </div>
+          ) : null}
         </div>
       </div>
     </section>
@@ -132,11 +134,11 @@ export default function ParticuliersPage() {
 
             <div className="card overflow-hidden">
               <Image
-                src="/images/cleaning/particulier-1.jpg"
+                src="/images/cleaning/particulier-1.webp"
                 alt="Service de nettoyage pour particuliers"
                 width={1200}
                 height={900}
-                className="h-[280px] md:h-[320px] w-full object-cover"
+                className="h-[280px] md:h-[320px] w-full object-cover object-center"
                 priority
               />
             </div>
@@ -152,11 +154,11 @@ export default function ParticuliersPage() {
         title="Des prestations adaptées à votre habitation"
         image={
           <Image
-            src="/images/cleaning/particulier-2.jpg"
+            src="/images/cleaning/particulier-2.webp"
             alt="Prestations de nettoyage à domicile"
             width={1200}
             height={900}
-            className="h-[280px] md:h-[360px] w-full object-cover"
+            className="h-[280px] md:h-[360px] w-full object-cover object-center"
           />
         }
       >
@@ -177,15 +179,6 @@ export default function ParticuliersPage() {
       <Split
         reverse
         title="Un intérieur propre sans vous soucier des tâches ménagères"
-        image={
-          <Image
-            src="/images/cleaning/particulier-3.jpg"
-            alt="Maison propre et entretenue"
-            width={1200}
-            height={900}
-            className="h-[280px] md:h-[360px] w-full object-cover"
-          />
-        }
       >
         <p className="text-muted">
           Faire appel à La Clé des Sols, c’est choisir un service fiable pour

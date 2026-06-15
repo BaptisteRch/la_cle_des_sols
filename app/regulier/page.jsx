@@ -12,8 +12,8 @@ function Split({ reverse = false, title, children, image }) {
     <section className="section">
       <div className="mx-auto max-w-7xl px-6">
         <div
-          className={`grid gap-8 items-start md:grid-cols-2 ${
-            reverse ? "md:[&>*:first-child]:order-2" : ""
+          className={`grid gap-8 items-start ${image ? "md:grid-cols-2" : ""} ${
+            image && reverse ? "md:[&>*:first-child]:order-2" : ""
           }`}
         >
           <div>
@@ -25,9 +25,11 @@ function Split({ reverse = false, title, children, image }) {
             <div className={title ? "mt-4" : ""}>{children}</div>
           </div>
 
-          <div className="grid gap-4">
-            <div className="card overflow-hidden">{image}</div>
-          </div>
+          {image ? (
+            <div className="grid gap-4">
+              <div className="card overflow-hidden">{image}</div>
+            </div>
+          ) : null}
         </div>
       </div>
     </section>
@@ -81,7 +83,7 @@ export default function NettoyageRegulierPage() {
 
             <div className="card overflow-hidden">
               <Image
-                src="/images/cleaning/regular-cleaning-1.jpg"
+                src="/images/cleaning/regular-cleaning-1.webp"
                 alt="Nettoyage régulier de locaux professionnels"
                 width={1200}
                 height={900}
@@ -154,7 +156,7 @@ export default function NettoyageRegulierPage() {
         title="Des interventions dans de nombreux secteurs"
         image={
           <Image
-            src="/images/cleaning/regular-cleaning-2.jpg"
+            src="/images/cleaning/regular-cleaning-2.webp"
             alt="Entretien de locaux pour différents secteurs professionnels"
             width={1200}
             height={900}
@@ -186,7 +188,7 @@ export default function NettoyageRegulierPage() {
         title="Une expérience adaptée à des activités variées"
         image={
           <Image
-            src="/images/cleaning/regular-cleaning-3.jpg"
+            src="/images/cleaning/regular-cleaning-3.webp"
             alt="Prestations de nettoyage pour entreprises et industries"
             width={1200}
             height={900}
@@ -215,18 +217,7 @@ export default function NettoyageRegulierPage() {
       </Split>
 
       {/* BLOC FINAL */}
-      <Split
-        title="Des locaux toujours propres et agréables à vivre"
-        image={
-          <Image
-            src="/images/cleaning/regular-cleaning-4.jpg"
-            alt="Entreprise de nettoyage régulier à Saint-Étienne"
-            width={1200}
-            height={900}
-            className="h-[280px] md:h-[360px] w-full object-cover"
-          />
-        }
-      >
+      <Split title="Des locaux toujours propres et agréables à vivre">
         <p className="text-muted">
           Notre objectif est simple : garantir des locaux toujours propres,
           sains et agréables à vivre pour vos équipes, vos visiteurs et vos

@@ -4,16 +4,12 @@ import Reveal from "./Reveal";
 export default function FieldGallery() {
   const photos = [
     {
-      src: "/images/laclesessols/van-side.jpg",
-      alt: "Véhicule La clé des sols à Saint-Étienne",
+      src: "/images/laclesessols/equipe-1.webp",
+      alt: "L'équipe La clé des sols, entreprise de propreté à Saint-Étienne",
     },
     {
-      src: "/images/laclesessols/intervention-1.jpg",
-      alt: "Intervention de nettoyage professionnel",
-    },
-    {
-      src: "/images/laclesessols/intervention-2.jpg",
-      alt: "Remise en état après chantier",
+      src: "/images/laclesessols/equipe-2b.webp",
+      alt: "Agents de nettoyage professionnel de La clé des sols en intervention",
     },
   ];
 
@@ -73,7 +69,7 @@ export default function FieldGallery() {
         </div>
 
         {/* Gallery */}
-        <div className="mt-12 grid gap-6 md:grid-cols-3">
+        <div className="mt-12 grid gap-6 md:grid-cols-2">
           {photos.map((p, idx) => (
             <Reveal key={p.src} direction="up" delay={idx * 120}>
               <figure className="card overflow-hidden rounded-3xl group relative">
@@ -82,11 +78,8 @@ export default function FieldGallery() {
                   alt={p.alt}
                   width={1200}
                   height={800}
-                  className="h-64 w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  className="h-64 w-full object-cover object-center transition-transform duration-500 group-hover:scale-110"
                 />
-                <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent text-white text-sm p-4 opacity-0 group-hover:opacity-100 transition-opacity">
-                  {p.alt}
-                </figcaption>
               </figure>
             </Reveal>
           ))}

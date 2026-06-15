@@ -12,8 +12,8 @@ function Split({ reverse = false, title, children, image }) {
     <section className="section">
       <div className="mx-auto max-w-7xl px-6">
         <div
-          className={`grid gap-8 items-start md:grid-cols-2 ${
-            reverse ? "md:[&>*:first-child]:order-2" : ""
+          className={`grid gap-8 items-start ${image ? "md:grid-cols-2" : ""} ${
+            image && reverse ? "md:[&>*:first-child]:order-2" : ""
           }`}
         >
           <div>
@@ -25,9 +25,11 @@ function Split({ reverse = false, title, children, image }) {
             <div className={title ? "mt-4" : ""}>{children}</div>
           </div>
 
-          <div className="grid gap-4">
-            <div className="card overflow-hidden">{image}</div>
-          </div>
+          {image ? (
+            <div className="grid gap-4">
+              <div className="card overflow-hidden">{image}</div>
+            </div>
+          ) : null}
         </div>
       </div>
     </section>
@@ -89,7 +91,7 @@ export default function VieDeChantierPage() {
 
             <div className="card overflow-hidden">
               <Image
-                src="/images/cleaning/site-life-1.jpg"
+                src="/images/cleaning/site-life-1.webp"
                 alt="Entretien de bases de vie de chantier"
                 width={1200}
                 height={900}
@@ -157,7 +159,7 @@ export default function VieDeChantierPage() {
         title="Approvisionnement et distribution des consommables sanitaires"
         image={
           <Image
-            src="/images/cleaning/site-life-3.jpg"
+            src="/images/cleaning/site-life-2.webp"
             alt="Gestion des consommables sanitaires sur chantier"
             width={1200}
             height={900}
@@ -197,18 +199,7 @@ export default function VieDeChantierPage() {
       </Split>
 
       {/* ZONES ENTRETENUES */}
-      <Split
-        title="Nous assurons l’entretien des espaces essentiels"
-        image={
-          <Image
-            src="/images/cleaning/site-life-2.jpg"
-            alt="Nettoyage des espaces de vie sur chantier"
-            width={1200}
-            height={900}
-            className="h-[280px] md:h-[360px] w-full object-cover"
-          />
-        }
-      >
+      <Split title="Nous assurons l’entretien des espaces essentiels">
         <p className="text-muted">
           L’entretien des bases de vie contribue directement au confort des
           équipes, à la bonne tenue du chantier et au respect des conditions
@@ -225,19 +216,7 @@ export default function VieDeChantierPage() {
       </Split>
 
       {/* BLOC FINAL */}
-      <Split
-        reverse
-        title="Un service fiable pour vos chantiers"
-        image={
-          <Image
-            src="/images/cleaning/site-life-4.jpg"
-            alt="Service de nettoyage pour base de vie de chantier"
-            width={1200}
-            height={900}
-            className="h-[280px] md:h-[360px] w-full object-cover"
-          />
-        }
-      >
+      <Split title="Un service fiable pour vos chantiers">
         <p className="text-muted">
           La Clé des Sols accompagne les entreprises du bâtiment avec des
           prestations adaptées aux réalités du chantier, à la fréquentation des

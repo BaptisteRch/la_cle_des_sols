@@ -12,8 +12,8 @@ function Split({ reverse = false, title, children, image }) {
     <section className="section">
       <div className="mx-auto max-w-7xl px-6">
         <div
-          className={`grid gap-8 items-start md:grid-cols-2 ${
-            reverse ? "md:[&>*:first-child]:order-2" : ""
+          className={`grid gap-8 items-start ${image ? "md:grid-cols-2" : ""} ${
+            image && reverse ? "md:[&>*:first-child]:order-2" : ""
           }`}
         >
           <div>
@@ -25,9 +25,11 @@ function Split({ reverse = false, title, children, image }) {
             <div className={title ? "mt-4" : ""}>{children}</div>
           </div>
 
-          <div className="grid gap-4">
-            <div className="card overflow-hidden">{image}</div>
-          </div>
+          {image ? (
+            <div className="grid gap-4">
+              <div className="card overflow-hidden">{image}</div>
+            </div>
+          ) : null}
         </div>
       </div>
     </section>
@@ -81,7 +83,7 @@ export default function EtatDeSolsPage() {
 
             <div className="card overflow-hidden">
               <Image
-                src="/images/cleaning/floor-restoration-1.jpg"
+                src="/images/cleaning/floor-restoration-1.webp"
                 alt="Remise en état de sols"
                 width={1200}
                 height={900}
@@ -153,12 +155,15 @@ export default function EtatDeSolsPage() {
       <Split
         title="Nous traitons tous types de sols"
         image={
-          <Image
-            src="/images/cleaning/floor-restoration-2.jpg"
-            alt="Nettoyage et remise en état de différents revêtements de sol"
-            width={1200}
-            height={900}
+          <video
+            src="/videos/remise-en-etat-sols.mp4"
             className="h-[280px] md:h-[360px] w-full object-cover"
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            aria-label="Démonstration de remise en état de sols"
           />
         }
       >
@@ -180,15 +185,6 @@ export default function EtatDeSolsPage() {
       <Split
         reverse
         title="Des techniques professionnelles adaptées"
-        image={
-          <Image
-            src="/images/cleaning/floor-restoration-3.jpg"
-            alt="Équipements professionnels pour la remise en état de sols"
-            width={1200}
-            height={900}
-            className="h-[280px] md:h-[360px] w-full object-cover"
-          />
-        }
       >
         <p className="text-muted">
           Nous utilisons des équipements professionnels performants pour traiter
@@ -214,15 +210,6 @@ export default function EtatDeSolsPage() {
       <Split
         reverse
         title="Une solution efficace pour vos sols les plus encrassés"
-        image={
-          <Image
-            src="/images/cleaning/floor-restoration-4.jpg"
-            alt="Entreprise de remise en état de sols à Saint-Étienne"
-            width={1200}
-            height={900}
-            className="h-[280px] md:h-[360px] w-full object-cover"
-          />
-        }
       >
         <p className="text-muted">
           La Clé des Sols accompagne les professionnels, collectivités,
