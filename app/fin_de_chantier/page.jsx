@@ -12,8 +12,8 @@ function Split({ reverse = false, title, children, image }) {
     <section className="section">
       <div className="mx-auto max-w-7xl px-6">
         <div
-          className={`grid gap-8 items-start md:grid-cols-2 ${
-            reverse ? "md:[&>*:first-child]:order-2" : ""
+          className={`grid gap-8 items-start ${image ? "md:grid-cols-2" : ""} ${
+            image && reverse ? "md:[&>*:first-child]:order-2" : ""
           }`}
         >
           <div>
@@ -25,9 +25,11 @@ function Split({ reverse = false, title, children, image }) {
             <div className={title ? "mt-4" : ""}>{children}</div>
           </div>
 
-          <div className="grid gap-4">
-            <div className="card overflow-hidden">{image}</div>
-          </div>
+          {image ? (
+            <div className="grid gap-4">
+              <div className="card overflow-hidden">{image}</div>
+            </div>
+          ) : null}
         </div>
       </div>
     </section>
@@ -86,7 +88,7 @@ export default function FinDeChantierPage() {
 
             <div className="card overflow-hidden">
               <Image
-                src="/images/cleaning/end-site-1.jpg"
+                src="/images/cleaning/end-site-1f.webp"
                 alt="Nettoyage de fin de chantier"
                 width={1200}
                 height={900}
@@ -159,7 +161,7 @@ export default function FinDeChantierPage() {
         title="Des interventions à chaque étape du chantier"
         image={
           <Image
-            src="/images/cleaning/end-site-2.jpg"
+            src="/images/cleaning/end-site-2.webp"
             alt="Intervention de nettoyage sur chantier"
             width={1200}
             height={900}
@@ -181,19 +183,7 @@ export default function FinDeChantierPage() {
       </Split>
 
       {/* PRESTATIONS */}
-      <Split
-        reverse
-        title="Nos prestations comprennent"
-        image={
-          <Image
-            src="/images/cleaning/end-site-3.jpg"
-            alt="Prestations de nettoyage de fin de chantier"
-            width={1200}
-            height={900}
-            className="h-[280px] md:h-[360px] w-full object-cover"
-          />
-        }
-      >
+      <Split reverse title="Nos prestations comprennent">
         <p className="text-muted">
           Nous réalisons un nettoyage complet des zones de chantier pour
           restituer des espaces propres, lisibles et prêts à être livrés.
@@ -218,15 +208,6 @@ export default function FinDeChantierPage() {
       <Split
         reverse
         title="Un partenaire fiable pour la livraison de vos chantiers"
-        image={
-          <Image
-            src="/images/cleaning/end-site-4.jpg"
-            alt="Entreprise de nettoyage de fin de chantier à Saint-Étienne"
-            width={1200}
-            height={900}
-            className="h-[280px] md:h-[360px] w-full object-cover"
-          />
-        }
       >
         <p className="text-muted">
           La Clé des Sols accompagne les entreprises du bâtiment, maîtres

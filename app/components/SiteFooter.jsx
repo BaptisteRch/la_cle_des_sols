@@ -1,6 +1,7 @@
 import Container from "./Container";
 import Link from "next/link";
 import { BRAND } from "./SiteHeader";
+import { getFeaturedCities } from "../lib/cities";
 
 const SOCIALS = [
   {
@@ -24,6 +25,8 @@ const SOCIALS = [
 ];
 
 export default function SiteFooter() {
+  const cities = getFeaturedCities();
+
   return (
     <footer
       className="border-t py-14 bg-white"
@@ -113,6 +116,28 @@ export default function SiteFooter() {
             </div>
           </div>
         </div>
+
+        {/* Zones d'intervention (maillage interne vers les pages villes) */}
+        {cities.length > 0 && (
+          <div
+            className="mt-12 pt-8 border-t"
+            style={{ borderColor: "var(--stroke)" }}
+          >
+            <div className="font-semibold mb-3">Zones d'intervention</div>
+            <ul className="flex flex-wrap gap-x-4 gap-y-2 text-sm text-muted">
+              {cities.map((c) => (
+                <li key={c.slug}>
+                  <Link
+                    href={`/nettoyage-${c.slug}`}
+                    className="hover:text-[var(--brand)]"
+                  >
+                    Nettoyage à {c.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
 
         {/* Bottom */}
         <div

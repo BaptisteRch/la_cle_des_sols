@@ -324,6 +324,16 @@ a {
     font-size: 0.75rem;
   }
 
+  /* Liens de navigation header */
+  .nav-link {
+    @apply rounded-full px-3 py-2 text-sm font-semibold transition;
+    color: rgba(11, 18, 32, 0.72);
+  }
+  .nav-link:hover {
+    color: var(--brand2);
+    background: rgba(255, 255, 255, 0.6);
+  }
+
   /* Hero */
   .hero-wrap {
     position: relative;

@@ -91,11 +91,11 @@ export default function VieDeChantierPage() {
 
             <div className="card overflow-hidden">
               <Image
-                src="/images/cleaning/site-life-1.webp"
+                src="/images/cleaning/site-life-1b.webp"
                 alt="Entretien de bases de vie de chantier"
                 width={1200}
                 height={900}
-                className="h-[280px] md:h-[320px] w-full object-cover"
+                className="h-[280px] md:h-[320px] w-full object-cover object-top"
                 priority
               />
             </div>
@@ -159,11 +159,11 @@ export default function VieDeChantierPage() {
         title="Approvisionnement et distribution des consommables sanitaires"
         image={
           <Image
-            src="/images/cleaning/site-life-2.webp"
+            src="/images/cleaning/site-life-2b.webp"
             alt="Gestion des consommables sanitaires sur chantier"
             width={1200}
             height={900}
-            className="h-[280px] md:h-[360px] w-full object-cover"
+            className="h-[280px] md:h-[360px] w-full object-cover object-center"
           />
         }
       >

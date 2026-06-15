@@ -57,39 +57,26 @@ export default function NettoyageRegulierPage() {
             L’entretien professionnel de vos espaces de travail
           </p>
 
-          <div className="mt-6 grid gap-6 md:grid-cols-[1.1fr_0.9fr] items-start">
-            <div className="space-y-3">
-              <p className="text-muted">
-                Un environnement propre est essentiel pour le confort des
-                collaborateurs et l’image de votre entreprise.
-              </p>
+          <div className="mt-6 max-w-3xl space-y-3">
+            <p className="text-muted">
+              Un environnement propre est essentiel pour le confort des
+              collaborateurs et l’image de votre entreprise.
+            </p>
 
-              <p className="text-muted">
-                Basée à Saint-Étienne, La Clé des Sols assure le{" "}
-                <strong>nettoyage régulier de locaux professionnels</strong>{" "}
-                dans toute la région, avec des prestations organisées selon vos
-                besoins, votre activité et vos contraintes.
-              </p>
+            <p className="text-muted">
+              Basée à Saint-Étienne, La Clé des Sols assure le{" "}
+              <strong>nettoyage régulier de locaux professionnels</strong> dans
+              toute la région, avec des prestations organisées selon vos
+              besoins, votre activité et vos contraintes.
+            </p>
 
-              <div className="mt-4 flex flex-wrap gap-3">
-                <a href="#contact" className="btn btn-primary">
-                  Demander un devis
-                </a>
-                <Link href="/#prestations" className="btn btn-ghost">
-                  Voir les autres prestations
-                </Link>
-              </div>
-            </div>
-
-            <div className="card overflow-hidden">
-              <Image
-                src="/images/cleaning/regular-cleaning-1.webp"
-                alt="Nettoyage régulier de locaux professionnels"
-                width={1200}
-                height={900}
-                className="h-[280px] md:h-[320px] w-full object-cover"
-                priority
-              />
+            <div className="mt-4 flex flex-wrap gap-3">
+              <a href="#contact" className="btn btn-primary">
+                Demander un devis
+              </a>
+              <Link href="/#prestations" className="btn btn-ghost">
+                Voir les autres prestations
+              </Link>
             </div>
           </div>
         </div>
