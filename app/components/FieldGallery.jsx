@@ -17,7 +17,7 @@ export default function FieldGallery() {
     <section className="section bg-[var(--paper)]">
       <div className="mx-auto max-w-7xl px-6">
         {/* Header */}
-        <div className="grid gap-8 md:grid-cols-[1.1fr_0.1fr] items-end">
+        <div className="max-w-3xl">
           <Reveal direction="left">
             <div>
               <span className="badge">Qui sommes-nous</span>

@@ -19,7 +19,7 @@ export default function Home() {
       <main id="main-content">
         {/* HERO */}
         <section
-          className="relative overflow-hidden bg-[var(--paper2)]"
+          className="relative overflow-hidden bg-[radial-gradient(60%_80%_at_85%_-10%,rgba(20,166,200,0.12),transparent_60%),radial-gradient(50%_60%_at_0%_100%,rgba(244,200,74,0.10),transparent_55%),linear-gradient(180deg,#ffffff,var(--paper2))]"
           aria-labelledby="hero-title"
         >
           <div className="relative mx-auto max-w-7xl px-6 py-16 md:py-24">

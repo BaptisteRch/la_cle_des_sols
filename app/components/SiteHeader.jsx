@@ -1,7 +1,7 @@
 // app/components/SiteHeader.jsx
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Container from "./Container";
 import Link from "next/link";
 import Image from "next/image";
@@ -50,6 +50,14 @@ function Chevron({ open }) {
 export default function SiteHeader() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 8);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   const closeAll = () => {
     setMobileOpen(false);
@@ -57,8 +65,15 @@ export default function SiteHeader() {
   };
 
   return (
-    <header className="header" role="banner">
-      <Container className="flex items-center justify-between py-3">
+    <header
+      className={`header ${scrolled ? "is-scrolled" : ""}`}
+      role="banner"
+    >
+      <Container
+        className={`flex items-center justify-between transition-[padding] duration-300 ${
+          scrolled ? "py-2.5" : "py-4"
+        }`}
+      >
         {/* Logo */}
         <Link
           href="/"
@@ -139,7 +154,7 @@ export default function SiteHeader() {
         <div className="flex items-center gap-2">
           <a
             href={BRAND.phoneHref}
-            className="btn btn-primary"
+            className="btn btn-primary rounded-full"
             aria-label={`Appeler La clé des sols au ${BRAND.phoneDisplay}`}
           >
             Appeler{" "}
@@ -148,7 +163,7 @@ export default function SiteHeader() {
 
           <Link
             href="/#contact"
-            className="btn btn-outline hidden md:inline-flex"
+            className="btn btn-outline rounded-full hidden md:inline-flex"
             onClick={closeAll}
           >
             Devis gratuit
@@ -157,7 +172,7 @@ export default function SiteHeader() {
           {/* Burger mobile */}
           <button
             type="button"
-            className="lg:hidden inline-flex h-10 w-10 items-center justify-center rounded-xl ring-1 ring-black/10 text-[var(--brand2)]"
+            className="lg:hidden inline-flex h-10 w-10 items-center justify-center rounded-full ring-1 ring-black/10 text-[var(--brand2)] transition hover:bg-white/70"
             aria-label="Ouvrir le menu"
             aria-expanded={mobileOpen}
             onClick={() => setMobileOpen((v) => !v)}
