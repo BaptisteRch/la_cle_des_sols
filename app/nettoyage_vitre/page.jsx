@@ -49,7 +49,7 @@ export default function NettoyageVitrePage() {
       <section className="section">
         <div className="mx-auto max-w-7xl px-6">
           <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight">
-            Nettoyage de vitres professionnel
+            Nettoyage professionnel de vitres
           </h1>
           <p className="mt-3 text-muted font-semibold">
             Vitres impeccables, quelle que soit la hauteur
@@ -84,14 +84,16 @@ export default function NettoyageVitrePage() {
             </div>
 
             <div className="card overflow-hidden">
-              <Image
-                src="/images/cleaning/window-cleaning-1.webp"
-                alt="Agent La clé des sols nettoyant une vitrine professionnelle à Saint-Étienne"
-                width={1200}
-                height={1600}
-                sizes="(max-width: 768px) 100vw, 45vw"
-                className="h-[280px] md:h-[320px] w-full object-cover"
-                priority
+              <video
+                src="/videos/nettoyage-vitres.mp4"
+                poster="/images/cleaning/window-cleaning-1.webp"
+                className="h-[280px] md:h-[360px] w-full object-cover"
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="metadata"
+                aria-label="Démonstration de nettoyage de vitres par La clé des sols"
               />
             </div>
           </div>

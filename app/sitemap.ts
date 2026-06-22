@@ -14,6 +14,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/vie_de_chantier",
     "/fin_de_chantier",
     "/etat_de_sols",
+    "/realisations",
     "/faq",
     "/mentions-legales",
     "/politique-confidentialite",

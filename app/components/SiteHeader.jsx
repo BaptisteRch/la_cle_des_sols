@@ -122,6 +122,10 @@ export default function SiteHeader() {
             )}
           </div>
 
+          <Link href="/realisations" className="nav-link" onClick={closeAll}>
+            Réalisations
+          </Link>
+
           <Link href="/faq" className="nav-link" onClick={closeAll}>
             FAQ
           </Link>
@@ -214,8 +218,16 @@ export default function SiteHeader() {
             </ul>
 
             <Link
-              href="/faq"
+              href="/realisations"
               className="block py-2 mt-2 font-semibold text-black/80"
+              onClick={closeAll}
+            >
+              Réalisations
+            </Link>
+
+            <Link
+              href="/faq"
+              className="block py-2 font-semibold text-black/80"
               onClick={closeAll}
             >
               FAQ

@@ -6,7 +6,7 @@ import { BRAND } from "./SiteHeader";
 const SERVICE_OPTIONS = ["Je suis un professionnel", "Je suis un particulier"];
 
 const FREQUENCY_OPTIONS = [
-  "Nettoyage de vitre",
+  "Nettoyage de vitres",
   "Nettoyage régulier",
   "Nettoyage de base de vie de chantier",
   "Nettoyage de fin de chantier",

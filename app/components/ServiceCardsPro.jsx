@@ -48,7 +48,7 @@ export default function ServiceCardsPro() {
   const items = [
     {
       icon: ICONS.vitre,
-      title: "Nettoyage de vitre",
+      title: "Nettoyage de vitres",
       desc: "Nettoyage sur petite et grande hauteur, perche eau pure jusqu'à 15m.",
       href: "/nettoyage_vitre",
     },

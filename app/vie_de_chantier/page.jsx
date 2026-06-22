@@ -91,11 +91,12 @@ export default function VieDeChantierPage() {
 
             <div className="card overflow-hidden">
               <Image
-                src="/images/cleaning/site-life-1b.webp"
-                alt="Entretien de bases de vie de chantier"
-                width={1200}
-                height={900}
-                className="h-[280px] md:h-[320px] w-full object-cover object-top"
+                src="/images/cleaning/base-vie-chantier.webp"
+                alt="Base de vie de chantier modulaire entretenue par La clé des sols"
+                width={1400}
+                height={1050}
+                sizes="(max-width: 768px) 100vw, 45vw"
+                className="h-[280px] md:h-[320px] w-full object-cover object-center"
                 priority
               />
             </div>

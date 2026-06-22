@@ -70,7 +70,7 @@ export default function SiteFooter() {
                 href="/nettoyage_vitre"
                 className="hover:text-[var(--brand)]"
               >
-                Nettoyage de vitre
+                Nettoyage de vitres
               </Link>
               <Link href="/regulier" className="hover:text-[var(--brand)]">
                 Nettoyage régulier
@@ -92,6 +92,9 @@ export default function SiteFooter() {
               </Link>
               <Link href="/particuliers" className="hover:text-[var(--brand)]">
                 Particuliers
+              </Link>
+              <Link href="/realisations" className="hover:text-[var(--brand)]">
+                Nos réalisations
               </Link>
               <Link href="/faq" className="hover:text-[var(--brand)]">
                 Questions fréquentes

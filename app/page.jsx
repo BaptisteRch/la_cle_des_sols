@@ -2,6 +2,7 @@
 import SiteFooter from "./components/SiteFooter";
 import ContactSection from "./components/ContactSection";
 import ServiceCardsPro from "./components/ServiceCardsPro";
+import RealisationsTeaser from "./components/RealisationsTeaser";
 import SiteHeader, { BRAND } from "./components/SiteHeader";
 import ReviewsCarousel from "./components/ReviewsCarousel";
 import FieldGallery from "./components/FieldGallery.jsx";
@@ -102,6 +103,8 @@ export default function Home() {
         <section id="prestations">
           <ServiceCardsPro />
         </section>
+
+        <RealisationsTeaser />
 
         {/* <StatsSection /> */}
 
