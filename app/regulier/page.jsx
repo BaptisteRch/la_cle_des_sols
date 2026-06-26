@@ -143,8 +143,8 @@ export default function NettoyageRegulierPage() {
         title="Des interventions dans de nombreux secteurs"
         image={
           <Image
-            src="/images/cleaning/regular-cleaning-2.webp"
-            alt="Entretien de locaux pour différents secteurs professionnels"
+            src="/images/cleaning/site-life-2b.webp"
+            alt="Agents La clé des sols assurant l'entretien régulier de locaux professionnels"
             width={1200}
             height={900}
             className="h-[280px] md:h-[360px] w-full object-cover"

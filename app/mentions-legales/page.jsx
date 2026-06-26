@@ -1,4 +1,5 @@
-import SiteHeader, { BRAND } from "../components/SiteHeader";
+import SiteHeader from "../components/SiteHeader";
+import { BRAND } from "../lib/brand";
 import SiteFooter from "../components/SiteFooter";
 
 export const metadata = {

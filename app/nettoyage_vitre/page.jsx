@@ -85,8 +85,8 @@ export default function NettoyageVitrePage() {
 
             <div className="card overflow-hidden">
               <video
-                src="/videos/nettoyage-vitres.mp4"
-                poster="/images/cleaning/window-cleaning-1.webp"
+                src="/videos/nettoyage-vitres-hero.mp4"
+                poster="/images/cleaning/nettoyage-vitres-hero-poster.webp"
                 className="h-[280px] md:h-[360px] w-full object-cover"
                 autoPlay
                 muted
@@ -105,13 +105,16 @@ export default function NettoyageVitrePage() {
         reverse
         title="Nettoyage de vitres toutes hauteurs"
         image={
-          <Image
-            src="/images/cleaning/window-cleaning-3.webp"
-            alt="Nettoyage de vitres en hauteur à la perche eau pure HiFlo — La clé des sols"
-            width={1200}
-            height={1600}
-            sizes="(max-width: 768px) 100vw, 45vw"
+          <video
+            src="/videos/nettoyage-vitres.mp4"
+            poster="/images/cleaning/window-cleaning-1.webp"
             className="h-[280px] md:h-[360px] w-full object-cover"
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            aria-label="Démonstration de nettoyage de vitres par La clé des sols"
           />
         }
       >

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { BRAND } from "./SiteHeader";
+import { BRAND } from "../lib/brand";
 
 const SERVICE_OPTIONS = ["Je suis un professionnel", "Je suis un particulier"];
 

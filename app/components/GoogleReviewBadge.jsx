@@ -22,20 +22,8 @@ function GoogleG({ className = "" }) {
   );
 }
 
-function Stars({ className = "" }) {
-  return (
-    <span className={`inline-flex ${className}`} aria-hidden="true">
-      {Array.from({ length: 5 }).map((_, i) => (
-        <svg key={i} viewBox="0 0 24 24" className="h-4 w-4 fill-[#FBBC04]">
-          <path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-        </svg>
-      ))}
-    </span>
-  );
-}
-
 export default function GoogleReviewBadge({
-  rating = "5,0",
+  rating = "4,5",
   href = "#",
   label = "Voir tous les avis",
 }) {
@@ -44,16 +32,13 @@ export default function GoogleReviewBadge({
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      aria-label={`Avis Google : ${rating} sur 5 — ${label}`}
+      aria-label={`Avis Google — ${label}`}
       className="inline-flex items-center gap-3 rounded-full bg-white px-4 py-2 ring-1 ring-black/10 shadow-sm hover:ring-black/20 hover:shadow-md transition"
     >
       <GoogleG className="h-7 w-7 shrink-0" />
 
       <span className="flex flex-col leading-tight">
-        <span className="flex items-center gap-1.5">
-          <Stars />
-          <span className="text-sm font-bold text-black/80">{rating}</span>
-        </span>
+        <span className="text-sm font-bold text-black/80">Avis Google</span>
         <span className="text-xs text-black/55">{label} →</span>
       </span>
     </a>

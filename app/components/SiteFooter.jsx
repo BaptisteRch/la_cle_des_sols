@@ -1,6 +1,6 @@
 import Container from "./Container";
 import Link from "next/link";
-import { BRAND } from "./SiteHeader";
+import { BRAND } from "../lib/brand";
 import { getFeaturedCities } from "../lib/cities";
 
 const SOCIALS = [

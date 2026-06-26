@@ -2,8 +2,8 @@
 // Paires avant/après — photos 3:4 dans /public/images/realisations/
 export const REALISATIONS = [
   {
-    beforeSrc: "/images/realisations/porte-vitree-avant.webp",
-    afterSrc: "/images/realisations/porte-vitree-apres.webp",
+    beforeSrc: "/images/realisations/porte-vitree-avant-v2.webp",
+    afterSrc: "/images/realisations/porte-vitree-apres-v2.webp",
     beforeAlt: "Porte vitrée recouverte de graffitis avant intervention",
     afterAlt:
       "Porte vitrée nettoyée et débarrassée des tags après nettoyage professionnel de vitres",

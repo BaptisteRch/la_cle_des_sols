@@ -3,7 +3,8 @@ import SiteFooter from "./components/SiteFooter";
 import ContactSection from "./components/ContactSection";
 import ServiceCardsPro from "./components/ServiceCardsPro";
 import RealisationsTeaser from "./components/RealisationsTeaser";
-import SiteHeader, { BRAND } from "./components/SiteHeader";
+import SiteHeader from "./components/SiteHeader";
+import { BRAND } from "./lib/brand";
 import ReviewsCarousel from "./components/ReviewsCarousel";
 import FieldGallery from "./components/FieldGallery.jsx";
 import Collaborations from "./components/Collaborations";
@@ -29,7 +30,7 @@ export default function Home() {
                 <div>
                   {/* Preuve sociale + réassurance */}
                   <div className="flex flex-wrap items-center gap-3">
-                    <GoogleReviewBadge rating="5,0" href={BRAND.reviewUrl} />
+                    <GoogleReviewBadge rating="4,5" href={BRAND.reviewUrl} />
 
                     <span className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-semibold bg-white ring-1 ring-black/10 text-black/70">
                       <span

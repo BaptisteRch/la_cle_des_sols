@@ -5,19 +5,7 @@ import { useEffect, useState } from "react";
 import Container from "./Container";
 import Link from "next/link";
 import Image from "next/image";
-
-const BRAND = {
-  name: "La clé des sols",
-  phoneDisplay: "04 77 32 09 12",
-  phoneHref: "tel:+33477320912",
-  email: "gmagand@cledessols.fr",
-  emailHref: "mailto:gmagand@cledessols.fr",
-  baseCity: "Saint-Étienne",
-  region: "Auvergne-Rhône-Alpes",
-  leadTime: "RDV sous 48h",
-  reviewUrl:
-    "https://www.google.com/search?q=la+cl%C3%A9+des+sols+saint-etienne",
-};
+import { BRAND } from "../lib/brand";
 
 const SERVICES = [
   { href: "/regulier", label: "Nettoyage régulier" },
@@ -261,5 +249,3 @@ export default function SiteHeader() {
     </header>
   );
 }
-
-export { BRAND };

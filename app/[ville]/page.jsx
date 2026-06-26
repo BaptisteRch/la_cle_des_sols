@@ -2,7 +2,8 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
-import SiteHeader, { BRAND } from "../components/SiteHeader";
+import SiteHeader from "../components/SiteHeader";
+import { BRAND } from "../lib/brand";
 import SiteFooter from "../components/SiteFooter";
 import ContactSection from "../components/ContactSection";
 import ServiceCardsPro from "../components/ServiceCardsPro";
