@@ -2,6 +2,14 @@
 // Paires avant/après — photos 3:4 dans /public/images/realisations/
 export const REALISATIONS = [
   {
+    beforeSrc: "/images/realisations/sol-entrepot-avant.webp",
+    afterSrc: "/images/realisations/sol-entrepot-apres.webp",
+    beforeAlt: "Sol d'entrepôt industriel encrassé et marqué avant intervention",
+    afterAlt:
+      "Sol d'entrepôt industriel propre et uniforme après remise en état par La clé des sols",
+    label: "Remise en état d'un sol d'entrepôt industriel",
+  },
+  {
     beforeSrc: "/images/realisations/porte-vitree-avant-v2.webp",
     afterSrc: "/images/realisations/porte-vitree-apres-v2.webp",
     beforeAlt: "Porte vitrée recouverte de graffitis avant intervention",
