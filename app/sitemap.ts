@@ -1,7 +1,6 @@
 import { MetadataRoute } from "next";
 import { getFeaturedCities } from "./lib/cities";
-
-const SITE_URL = "https://cledessols.fr";
+import { SITE_URL } from "./lib/brand";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();

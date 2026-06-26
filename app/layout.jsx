@@ -1,6 +1,7 @@
 // app/layout.jsx
 import { Inter, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
+import { SITE_URL } from "./lib/brand";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -13,8 +14,6 @@ const jakarta = Plus_Jakarta_Sans({
   variable: "--font-heading",
   display: "swap",
 });
-
-const SITE_URL = "https://cledessols.fr";
 
 export const metadata = {
   metadataBase: new URL(SITE_URL),

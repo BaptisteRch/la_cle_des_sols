@@ -3,7 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import SiteHeader from "../components/SiteHeader";
-import { BRAND } from "../lib/brand";
+import { BRAND, SITE_URL } from "../lib/brand";
 import SiteFooter from "../components/SiteFooter";
 import ContactSection from "../components/ContactSection";
 import ServiceCardsPro from "../components/ServiceCardsPro";
@@ -12,7 +12,6 @@ import Reveal from "../components/Reveal";
 import { CITIES, getCity, getFeaturedCities } from "../lib/cities";
 import { getIntro, getReasons, isFeatured } from "../lib/cityContent";
 
-const SITE_URL = "https://cledessols.fr";
 const PREFIX = "nettoyage-";
 
 // 404 pour toute valeur hors generateStaticParams

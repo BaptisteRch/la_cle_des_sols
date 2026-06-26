@@ -3,6 +3,10 @@
 // À importer aussi bien dans les Server Components que les Client Components.
 // Ne PAS définir/exporter ceci depuis un fichier "use client" : les Server
 // Components recevraient des références client (proxies) → valeurs undefined.
+// URL canonique du site (sans slash final). Source unique de vérité —
+// utilisée par metadataBase, sitemap, robots et les canonicals/JSON-LD.
+export const SITE_URL = "https://www.cledessols.fr";
+
 export const BRAND = {
   name: "La clé des sols",
   phoneDisplay: "04 77 32 09 12",
