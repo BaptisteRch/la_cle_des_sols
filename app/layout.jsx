@@ -48,8 +48,9 @@ export const metadata = {
       "Devis gratuit • RDV sous 48h • Nettoyage professionnels & particuliers • Loire, Rhône, Haute-Loire",
     images: ["/images/logo.webp"],
   },
-
-  icons: { icon: "/favicon.ico" },
+  // Icônes gérées par convention de fichier : app/favicon.ico (vrai ICO
+  // 16/32/48) + app/icon.png (512px). Pas d'override manuel pour laisser
+  // Next injecter les bons types/sizes + hash de cache-busting.
 };
 
 export default function RootLayout({ children }) {
